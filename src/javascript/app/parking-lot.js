@@ -10,7 +10,7 @@ module.exports = class ParkingLot {
 
         this.parkingCharge = new ParkingCharge(minHours, minCharge, chargePerHour);
 
-        console.log('Created parking lot with '+ nofSlots +' slots');
+        if(!data) console.log('Created parking lot with '+ nofSlots +' slots');
     }
 
     park(carNumber) {
@@ -31,7 +31,7 @@ module.exports = class ParkingLot {
 
         if(slotNumber) {
             this.dataSource.storeData(this.slotArray.getData());
-            console.log(carNumber + ' with Slot Number '+ slotNumber +' is free with Charge ' + totalCharge);
+            console.log('Registration number ' + carNumber + ' with Slot Number '+ slotNumber +' is free with Charge ' + totalCharge);
         } else {
             console.log('Registration number '+ carNumber +' not found');
         }

@@ -4,7 +4,7 @@ module.exports = class SlotArray {
     }
 
     allocate(object) {
-        const slotNumber = this.slots.findIndex(s => s === undefined);
+        const slotNumber = this.slots.findIndex(s => s === undefined || s === null);
         if(slotNumber > -1) {
             this.slots[slotNumber] = object;
         }
