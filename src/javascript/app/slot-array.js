@@ -27,7 +27,9 @@ module.exports = class SlotArray {
         return this.slots.findIndex(o => eqFunc(object, o));
     }
 
-    print() {
-
+    print(parsSLotNumber) {
+        for(const slotNumber in this.slots) {
+            console.log(parsSLotNumber(slotNumber) + '   ' + this.slots[slotNumber]);
+        }
     }
 }
