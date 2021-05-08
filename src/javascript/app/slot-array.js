@@ -1,6 +1,6 @@
 module.exports = class SlotArray {
-    constructor(size) {
-        this.slots = new Array(size);
+    constructor(data, size) {
+        this.slots = data ? data : new Array(size);
     }
 
     allocate(object) {
@@ -31,5 +31,9 @@ module.exports = class SlotArray {
         for(const slotNumber in this.slots) {
             console.log(parsSLotNumber(slotNumber) + '   ' + this.slots[slotNumber]);
         }
+    }
+
+    getData() {
+        return this.slots;
     }
 }
